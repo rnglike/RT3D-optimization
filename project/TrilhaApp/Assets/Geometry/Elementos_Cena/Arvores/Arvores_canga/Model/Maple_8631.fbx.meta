@@ -1,123 +1,332 @@
 fileFormatVersion: 2
 guid: 16a727d1bdcc2d24e8abea3bab7c5640
-timeCreated: 1506258404
-licenseType: Store
 ModelImporter:
-  serializedVersion: 21
-  fileIDToRecycleName:
-    100000: Bone045
-    100002: Bone046
-    100004: Bone047
-    100006: Bone048
-    100008: Bone049
-    100010: Bone050
-    100012: Bone051
-    100014: Bone052
-    100016: Bone053
-    100018: Bone054
-    100020: Bone055
-    100022: Bone056
-    100024: Bone057
-    100026: Bone058
-    100028: Bone059
-    100030: Bone060
-    100032: Bone061
-    100034: Bone062
-    100036: Bone063
-    100038: Bone064
-    100040: Bone067
-    100042: Bone068
-    100044: joint1
-    100046: joint2
-    100048: Line026
-    100050: Line027
-    100052: Line028
-    100054: Line029
-    100056: //RootNode
-    100058: Maple_8631
-    100060: Object1063
-    100062: Object1064
-    100064: Object1065
-    100066: Object1066
-    100068: Object1067
-    100070: Object1068
-    100072: Object1069
-    100074: transform1
-    100076: transform10
-    100078: transform11
-    100080: transform12
-    100082: transform2
-    100084: transform3
-    100086: transform4
-    100088: transform5
-    100090: transform6
-    100092: transform7
-    100094: transform8
-    100096: transform9
-    100098: Trunk
-    400000: Bone045
-    400002: Bone046
-    400004: Bone047
-    400006: Bone048
-    400008: Bone049
-    400010: Bone050
-    400012: Bone051
-    400014: Bone052
-    400016: Bone053
-    400018: Bone054
-    400020: Bone055
-    400022: Bone056
-    400024: Bone057
-    400026: Bone058
-    400028: Bone059
-    400030: Bone060
-    400032: Bone061
-    400034: Bone062
-    400036: Bone063
-    400038: Bone064
-    400040: Bone067
-    400042: Bone068
-    400044: joint1
-    400046: joint2
-    400048: Line026
-    400050: Line027
-    400052: Line028
-    400054: Line029
-    400056: Maple_8631
-    400058: //RootNode
-    400060: Object1063
-    400062: Object1064
-    400064: Object1065
-    400066: Object1066
-    400068: Object1067
-    400070: Object1068
-    400072: Object1069
-    400074: transform1
-    400076: transform10
-    400078: transform11
-    400080: transform12
-    400082: transform2
-    400084: transform3
-    400086: transform4
-    400088: transform5
-    400090: transform6
-    400092: transform7
-    400094: transform8
-    400096: transform9
-    400098: Trunk
-    4300000: Maple_8631
-    7400000: Wind
-    9500000: //RootNode
-    13700000: Maple_8631
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Bone045
+  - first:
+      1: 100002
+    second: Bone046
+  - first:
+      1: 100004
+    second: Bone047
+  - first:
+      1: 100006
+    second: Bone048
+  - first:
+      1: 100008
+    second: Bone049
+  - first:
+      1: 100010
+    second: Bone050
+  - first:
+      1: 100012
+    second: Bone051
+  - first:
+      1: 100014
+    second: Bone052
+  - first:
+      1: 100016
+    second: Bone053
+  - first:
+      1: 100018
+    second: Bone054
+  - first:
+      1: 100020
+    second: Bone055
+  - first:
+      1: 100022
+    second: Bone056
+  - first:
+      1: 100024
+    second: Bone057
+  - first:
+      1: 100026
+    second: Bone058
+  - first:
+      1: 100028
+    second: Bone059
+  - first:
+      1: 100030
+    second: Bone060
+  - first:
+      1: 100032
+    second: Bone061
+  - first:
+      1: 100034
+    second: Bone062
+  - first:
+      1: 100036
+    second: Bone063
+  - first:
+      1: 100038
+    second: Bone064
+  - first:
+      1: 100040
+    second: Bone067
+  - first:
+      1: 100042
+    second: Bone068
+  - first:
+      1: 100044
+    second: joint1
+  - first:
+      1: 100046
+    second: joint2
+  - first:
+      1: 100048
+    second: Line026
+  - first:
+      1: 100050
+    second: Line027
+  - first:
+      1: 100052
+    second: Line028
+  - first:
+      1: 100054
+    second: Line029
+  - first:
+      1: 100056
+    second: //RootNode
+  - first:
+      1: 100058
+    second: Maple_8631
+  - first:
+      1: 100060
+    second: Object1063
+  - first:
+      1: 100062
+    second: Object1064
+  - first:
+      1: 100064
+    second: Object1065
+  - first:
+      1: 100066
+    second: Object1066
+  - first:
+      1: 100068
+    second: Object1067
+  - first:
+      1: 100070
+    second: Object1068
+  - first:
+      1: 100072
+    second: Object1069
+  - first:
+      1: 100074
+    second: transform1
+  - first:
+      1: 100076
+    second: transform10
+  - first:
+      1: 100078
+    second: transform11
+  - first:
+      1: 100080
+    second: transform12
+  - first:
+      1: 100082
+    second: transform2
+  - first:
+      1: 100084
+    second: transform3
+  - first:
+      1: 100086
+    second: transform4
+  - first:
+      1: 100088
+    second: transform5
+  - first:
+      1: 100090
+    second: transform6
+  - first:
+      1: 100092
+    second: transform7
+  - first:
+      1: 100094
+    second: transform8
+  - first:
+      1: 100096
+    second: transform9
+  - first:
+      1: 100098
+    second: Trunk
+  - first:
+      4: 400000
+    second: Bone045
+  - first:
+      4: 400002
+    second: Bone046
+  - first:
+      4: 400004
+    second: Bone047
+  - first:
+      4: 400006
+    second: Bone048
+  - first:
+      4: 400008
+    second: Bone049
+  - first:
+      4: 400010
+    second: Bone050
+  - first:
+      4: 400012
+    second: Bone051
+  - first:
+      4: 400014
+    second: Bone052
+  - first:
+      4: 400016
+    second: Bone053
+  - first:
+      4: 400018
+    second: Bone054
+  - first:
+      4: 400020
+    second: Bone055
+  - first:
+      4: 400022
+    second: Bone056
+  - first:
+      4: 400024
+    second: Bone057
+  - first:
+      4: 400026
+    second: Bone058
+  - first:
+      4: 400028
+    second: Bone059
+  - first:
+      4: 400030
+    second: Bone060
+  - first:
+      4: 400032
+    second: Bone061
+  - first:
+      4: 400034
+    second: Bone062
+  - first:
+      4: 400036
+    second: Bone063
+  - first:
+      4: 400038
+    second: Bone064
+  - first:
+      4: 400040
+    second: Bone067
+  - first:
+      4: 400042
+    second: Bone068
+  - first:
+      4: 400044
+    second: joint1
+  - first:
+      4: 400046
+    second: joint2
+  - first:
+      4: 400048
+    second: Line026
+  - first:
+      4: 400050
+    second: Line027
+  - first:
+      4: 400052
+    second: Line028
+  - first:
+      4: 400054
+    second: Line029
+  - first:
+      4: 400056
+    second: Maple_8631
+  - first:
+      4: 400058
+    second: //RootNode
+  - first:
+      4: 400060
+    second: Object1063
+  - first:
+      4: 400062
+    second: Object1064
+  - first:
+      4: 400064
+    second: Object1065
+  - first:
+      4: 400066
+    second: Object1066
+  - first:
+      4: 400068
+    second: Object1067
+  - first:
+      4: 400070
+    second: Object1068
+  - first:
+      4: 400072
+    second: Object1069
+  - first:
+      4: 400074
+    second: transform1
+  - first:
+      4: 400076
+    second: transform10
+  - first:
+      4: 400078
+    second: transform11
+  - first:
+      4: 400080
+    second: transform12
+  - first:
+      4: 400082
+    second: transform2
+  - first:
+      4: 400084
+    second: transform3
+  - first:
+      4: 400086
+    second: transform4
+  - first:
+      4: 400088
+    second: transform5
+  - first:
+      4: 400090
+    second: transform6
+  - first:
+      4: 400092
+    second: transform7
+  - first:
+      4: 400094
+    second: transform8
+  - first:
+      4: 400096
+    second: transform9
+  - first:
+      4: 400098
+    second: Trunk
+  - first:
+      43: 4300000
+    second: Maple_8631
+  - first:
+      74: 7400000
+    second: Wind
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Maple_8631
+  externalObjects: {}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 0
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -125,16 +334,20 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: Wind
       takeName: Take 001
+      internalID: 0
       firstFrame: 0
       lastFrame: 200
       wrapMode: 0
@@ -164,21 +377,35 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 30
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 0
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -186,10 +413,13 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -199,14 +429,18 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 30
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
