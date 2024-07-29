@@ -1,8 +1,8 @@
-
-
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SendData : MonoBehaviour
 {   
@@ -36,7 +36,7 @@ public class SendData : MonoBehaviour
             Debug.LogWarning("O Componente do WS não foi encontrado no GameObject");
         }
 
-        startButton.onClick.AddListener(OnStartScene);
+        // startButton.onClick.AddListener(OnStartScene);
 
     }
 
@@ -59,10 +59,30 @@ public class SendData : MonoBehaviour
         wsClient.WebSocketInstance.Send(jsonData);
         Debug.Log("Mensagem enviada para mudar de cena: " + jsonData);
 
-                // Desativa o botão de iniciar e mostra a mensagem de espera
+        // Desativa o botão de iniciar e mostra a mensagem de espera
         startButton.interactable = false;
         waitMessageText.gameObject.SetActive(true);
 
+    }
+
+    public void DebugStartScene()
+    {
+        // Desativa o botão de iniciar e mostra a mensagem de espera
+        startButton.interactable = false;
+        waitMessageText.gameObject.SetActive(true);
+
+        StartCoroutine(LoadYourAsyncScene());
+    }
+
+    IEnumerator LoadYourAsyncScene()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(1);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 
     public void OnConnect()
