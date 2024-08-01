@@ -15,7 +15,6 @@ public class WS_Client : MonoBehaviour
 
     public GameObject playerNamesPrefab; // Prefab do objeto TextMeshPro para exibir os nomes dos jogadores
     public Transform namesParent;
-    public bool IsWebsocketEnabled;
 
     public WebSocket WebSocketInstance
     {
@@ -27,31 +26,17 @@ public class WS_Client : MonoBehaviour
         get { return instance; }
     }
 
-    public void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-        DontDestroyOnLoad(this.gameObject);
-    }
 
-    void Start()
+    void Awake()
     {
-        if (IsWebsocketEnabled)
+        DontDestroyOnLoad(this.gameObject);
+        ws = new WebSocket("ws://10.101.0.154:7760");
+        ws.OnMessage += (sender, e) =>
         {
-            ws = new WebSocket("ws://10.101.0.154:7760");
-            ws.OnMessage += (sender, e) =>
-            {
-                HandleMessage(e.Data);
-                Debug.Log("Mensagem recebida de: " + ((WebSocket)sender).Url + ", Data : " + e.Data);
-            };
-            ws.Connect();
-        }
+            HandleMessage(e.Data);
+            Debug.Log("Mensagem recebida de: " + ((WebSocket)sender).Url + ", Data : " + e.Data);
+        };
+        ws.Connect();
     }
 
    public void UpdatePlayerList(List<string> playerNames)
