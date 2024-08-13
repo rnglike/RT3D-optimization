@@ -1,332 +1,123 @@
 fileFormatVersion: 2
 guid: 44b7eb54991cbf9438b7c1b68944e667
+timeCreated: 1506258407
+licenseType: Store
 ModelImporter:
-  serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: Bone069
-  - first:
-      1: 100002
-    second: Bone070
-  - first:
-      1: 100004
-    second: Bone073
-  - first:
-      1: 100006
-    second: Bone074
-  - first:
-      1: 100008
-    second: Bone075
-  - first:
-      1: 100010
-    second: Bone076
-  - first:
-      1: 100012
-    second: Bone077
-  - first:
-      1: 100014
-    second: Bone078
-  - first:
-      1: 100016
-    second: Bone079
-  - first:
-      1: 100018
-    second: Bone080
-  - first:
-      1: 100020
-    second: Bone081
-  - first:
-      1: 100022
-    second: Bone082
-  - first:
-      1: 100024
-    second: Bone083
-  - first:
-      1: 100026
-    second: Bone084
-  - first:
-      1: 100028
-    second: Bone085
-  - first:
-      1: 100030
-    second: Bone086
-  - first:
-      1: 100032
-    second: Bone087
-  - first:
-      1: 100034
-    second: Bone088
-  - first:
-      1: 100036
-    second: Bone092
-  - first:
-      1: 100038
-    second: Bone093
-  - first:
-      1: 100040
-    second: Bone094
-  - first:
-      1: 100042
-    second: Bone095
-  - first:
-      1: 100044
-    second: Bone215
-  - first:
-      1: 100046
-    second: Bone216
-  - first:
-      1: 100048
-    second: Klen4_Default
-  - first:
-      1: 100050
-    second: Line030
-  - first:
-      1: 100052
-    second: Line031
-  - first:
-      1: 100054
-    second: Line032
-  - first:
-      1: 100056
-    second: Line033
-  - first:
-      1: 100058
-    second: Line034
-  - first:
-      1: 100060
-    second: Line036
-  - first:
-      1: 100062
-    second: //RootNode
-  - first:
-      1: 100064
-    second: Maple_10605poly
-  - first:
-      1: 100066
-    second: Object1070
-  - first:
-      1: 100068
-    second: Object1071
-  - first:
-      1: 100070
-    second: Object1072
-  - first:
-      1: 100072
-    second: Object1074
-  - first:
-      1: 100074
-    second: Object1075
-  - first:
-      1: 100076
-    second: transform1
-  - first:
-      1: 100078
-    second: transform10
-  - first:
-      1: 100080
-    second: transform11
-  - first:
-      1: 100082
-    second: transform12
-  - first:
-      1: 100084
-    second: transform2
-  - first:
-      1: 100086
-    second: transform3
-  - first:
-      1: 100088
-    second: transform4
-  - first:
-      1: 100090
-    second: transform5
-  - first:
-      1: 100092
-    second: transform6
-  - first:
-      1: 100094
-    second: transform7
-  - first:
-      1: 100096
-    second: transform8
-  - first:
-      1: 100098
-    second: transform9
-  - first:
-      4: 400000
-    second: Bone069
-  - first:
-      4: 400002
-    second: Bone070
-  - first:
-      4: 400004
-    second: Bone073
-  - first:
-      4: 400006
-    second: Bone074
-  - first:
-      4: 400008
-    second: Bone075
-  - first:
-      4: 400010
-    second: Bone076
-  - first:
-      4: 400012
-    second: Bone077
-  - first:
-      4: 400014
-    second: Bone078
-  - first:
-      4: 400016
-    second: Bone079
-  - first:
-      4: 400018
-    second: Bone080
-  - first:
-      4: 400020
-    second: Bone081
-  - first:
-      4: 400022
-    second: Bone082
-  - first:
-      4: 400024
-    second: Bone083
-  - first:
-      4: 400026
-    second: Bone084
-  - first:
-      4: 400028
-    second: Bone085
-  - first:
-      4: 400030
-    second: Bone086
-  - first:
-      4: 400032
-    second: Bone087
-  - first:
-      4: 400034
-    second: Bone088
-  - first:
-      4: 400036
-    second: Bone092
-  - first:
-      4: 400038
-    second: Bone093
-  - first:
-      4: 400040
-    second: Bone094
-  - first:
-      4: 400042
-    second: Bone095
-  - first:
-      4: 400044
-    second: Bone215
-  - first:
-      4: 400046
-    second: Bone216
-  - first:
-      4: 400048
-    second: Klen4_Default
-  - first:
-      4: 400050
-    second: Line030
-  - first:
-      4: 400052
-    second: Line031
-  - first:
-      4: 400054
-    second: Line032
-  - first:
-      4: 400056
-    second: Line033
-  - first:
-      4: 400058
-    second: Line034
-  - first:
-      4: 400060
-    second: Line036
-  - first:
-      4: 400062
-    second: //RootNode
-  - first:
-      4: 400064
-    second: Maple_10605poly
-  - first:
-      4: 400066
-    second: Object1070
-  - first:
-      4: 400068
-    second: Object1071
-  - first:
-      4: 400070
-    second: Object1072
-  - first:
-      4: 400072
-    second: Object1074
-  - first:
-      4: 400074
-    second: Object1075
-  - first:
-      4: 400076
-    second: transform1
-  - first:
-      4: 400078
-    second: transform10
-  - first:
-      4: 400080
-    second: transform11
-  - first:
-      4: 400082
-    second: transform12
-  - first:
-      4: 400084
-    second: transform2
-  - first:
-      4: 400086
-    second: transform3
-  - first:
-      4: 400088
-    second: transform4
-  - first:
-      4: 400090
-    second: transform5
-  - first:
-      4: 400092
-    second: transform6
-  - first:
-      4: 400094
-    second: transform7
-  - first:
-      4: 400096
-    second: transform8
-  - first:
-      4: 400098
-    second: transform9
-  - first:
-      43: 4300000
-    second: Maple_10605poly
-  - first:
-      74: 7400000
-    second: Wind
-  - first:
-      95: 9500000
-    second: //RootNode
-  - first:
-      137: 13700000
-    second: Maple_10605poly
-  externalObjects: {}
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Bone069
+    100002: Bone070
+    100004: Bone073
+    100006: Bone074
+    100008: Bone075
+    100010: Bone076
+    100012: Bone077
+    100014: Bone078
+    100016: Bone079
+    100018: Bone080
+    100020: Bone081
+    100022: Bone082
+    100024: Bone083
+    100026: Bone084
+    100028: Bone085
+    100030: Bone086
+    100032: Bone087
+    100034: Bone088
+    100036: Bone092
+    100038: Bone093
+    100040: Bone094
+    100042: Bone095
+    100044: Bone215
+    100046: Bone216
+    100048: Klen4_Default
+    100050: Line030
+    100052: Line031
+    100054: Line032
+    100056: Line033
+    100058: Line034
+    100060: Line036
+    100062: //RootNode
+    100064: Maple_10605poly
+    100066: Object1070
+    100068: Object1071
+    100070: Object1072
+    100072: Object1074
+    100074: Object1075
+    100076: transform1
+    100078: transform10
+    100080: transform11
+    100082: transform12
+    100084: transform2
+    100086: transform3
+    100088: transform4
+    100090: transform5
+    100092: transform6
+    100094: transform7
+    100096: transform8
+    100098: transform9
+    400000: Bone069
+    400002: Bone070
+    400004: Bone073
+    400006: Bone074
+    400008: Bone075
+    400010: Bone076
+    400012: Bone077
+    400014: Bone078
+    400016: Bone079
+    400018: Bone080
+    400020: Bone081
+    400022: Bone082
+    400024: Bone083
+    400026: Bone084
+    400028: Bone085
+    400030: Bone086
+    400032: Bone087
+    400034: Bone088
+    400036: Bone092
+    400038: Bone093
+    400040: Bone094
+    400042: Bone095
+    400044: Bone215
+    400046: Bone216
+    400048: Klen4_Default
+    400050: Line030
+    400052: Line031
+    400054: Line032
+    400056: Line033
+    400058: Line034
+    400060: Line036
+    400062: //RootNode
+    400064: Maple_10605poly
+    400066: Object1070
+    400068: Object1071
+    400070: Object1072
+    400072: Object1074
+    400074: Object1075
+    400076: transform1
+    400078: transform10
+    400080: transform11
+    400082: transform12
+    400084: transform2
+    400086: transform3
+    400088: transform4
+    400090: transform5
+    400092: transform6
+    400094: transform7
+    400096: transform8
+    400098: transform9
+    4300000: Maple_10605poly
+    7400000: Wind
+    9500000: //RootNode
+    13700000: Maple_10605poly
   materials:
-    materialImportMode: 1
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 0
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -334,20 +125,16 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
-    importConstraints: 0
     animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
       name: Wind
       takeName: Take 001
-      internalID: 0
       firstFrame: 0
       lastFrame: 200
       wrapMode: 0
@@ -377,35 +164,21 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 23
-    meshCompression: 2
+    meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
     importVisibility: 0
     importBlendShapes: 0
     importCameras: 0
     importLights: 0
-    nodeNameCollisionStrategy: 0
-    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 1
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 0
-    bakeAxisConversion: 0
-    preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    optimizeBones: 1
-    meshOptimizationFlags: -1
-    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVMarginMethod: 0
-    secondaryUVMinLightmapResolution: 40
-    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -413,13 +186,10 @@ ModelImporter:
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
-    blendShapeNormalImportMode: 1
-    normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
+  copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -429,18 +199,14 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 23
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
-  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
-  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

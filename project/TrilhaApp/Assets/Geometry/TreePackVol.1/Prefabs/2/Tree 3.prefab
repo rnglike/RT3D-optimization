@@ -84,7 +84,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: Tree Data
   m_EditorClassIdentifier: 
   _uniqueID: 381
-  materialHash: f589105a0f6856dfdcb70e7accaf0c3358982400
+  materialHash: e4de00cb99fcc1944583d5dc344762b958982400
   root:
     _uniqueID: 1
     seed: 3426966
@@ -4288,6 +4288,6 @@ MonoBehaviour:
     groupID: 331
     _uniqueID: 379
   mesh: {fileID: 43152671095240196}
-  optimizedSolidMaterial: {fileID: 2100000, guid: ac69d663c85bcc74694baccc89640d07, type: 2}
-  optimizedCutoutMaterial: {fileID: 2100000, guid: 53741275cbcafd545b117a23b0bdf1c3, type: 2}
-  isInPreviewMode: 0
+  optimizedSolidMaterial: {fileID: 21141634165017130}
+  optimizedCutoutMaterial: {fileID: 21670575571789092}
+  isInPreviewMode: 1
