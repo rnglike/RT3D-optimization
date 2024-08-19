@@ -86,7 +86,7 @@ Material:
     - _OREEMISSIONONOFF: 1
     - _OreEmissionIntensity: 7.23
     - _SNOWONOFF: 0
-    - _Shininess: 1
+    - _Shininess: 0.723
     - _Smoothness: 0.321
     - _SnowAmount: 0.215
     - _SnowCoverage: 0.23

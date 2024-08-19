@@ -7,7 +7,7 @@ public class ShaderSetterTool : EditorWindow
     private Shader selectedShader;
     private string newMaterialFolderPath = "Assets/NewMaterials";
 
-    [MenuItem("Tools/Shader Setter Tool")]
+    [MenuItem("Research/Optimization/Standardize Shader for Current Scene")]
     public static void ShowWindow()
     {
         GetWindow<ShaderSetterTool>("Shader Setter Tool");

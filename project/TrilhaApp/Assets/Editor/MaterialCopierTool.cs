@@ -11,7 +11,7 @@ public class MaterialCopierTool : EditorWindow
     private const int batchSize = 50;
     private IEnumerator coroutine;
 
-    [MenuItem("Tools/Material Copier Tool")]
+    [MenuItem("Research/Optimization/Copy and Reassign Materials")]
     public static void ShowWindow()
     {
         GetWindow<MaterialCopierTool>("Material Copier Tool");

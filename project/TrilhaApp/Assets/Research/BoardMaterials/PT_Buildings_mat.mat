@@ -88,7 +88,7 @@ Material:
     - _Metal3smootness: 0.7
     - _MetallicOn: 1
     - _OnOff: 1
-    - _Shininess: 1
+    - _Shininess: 0.723
     - _SmoothnessOn: 1
     - _Transparency: 1
     - _WorldObjectposition: 0

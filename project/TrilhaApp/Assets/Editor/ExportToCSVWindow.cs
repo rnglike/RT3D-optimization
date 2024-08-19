@@ -16,7 +16,7 @@ public class ExportToCSVWindow : EditorWindow
 
     private float progress = 0f; // Progress indicator
 
-    [MenuItem("Window/Export GameObject Data to CSV")]
+    [MenuItem("Research/Optimization/Export GameObject Data to CSV")]
     public static void ShowWindow()
     {
         GetWindow<ExportToCSVWindow>("Export to CSV");
