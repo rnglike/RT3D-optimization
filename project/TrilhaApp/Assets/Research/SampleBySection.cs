@@ -1,10 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using Unity.Profiling;
 using Unity.XR.CoreUtils;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.Profiling;
+using System.Text;
 
 public class SampleBySection : MonoBehaviour
 {
@@ -28,11 +29,13 @@ public class SampleBySection : MonoBehaviour
     private string folderPath;
 
     // Profiling recorders
-    private ProfilerRecorder mainThreadTimeRecorder;
-    private ProfilerRecorder renderRecorderAllThreads;
+    private Recorder mainThreadTimeRecorder;
+    private Recorder triangleRecorder;
+    private Recorder drawCallsRecorder;
+    private Recorder verticesRecorder;
 
-    // Method to calculate the average value from a ProfilerRecorder
-    private static double GetRecorderAverage(ProfilerRecorder recorder)
+// Method to calculate the average value from a ProfilerRecorder
+private static double GetRecorderAverage(ProfilerRecorder recorder)
     {
         int samplesCount = recorder.Capacity;
         if (samplesCount == 0)
@@ -65,6 +68,7 @@ public class SampleBySection : MonoBehaviour
         if (isRotating)
         {
             RotateXrRig();
+            LogRotationData();
         }
         else if (isMoving)
         {
@@ -72,17 +76,10 @@ public class SampleBySection : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
-    {
-        if (isRotating)
-        {
-            LogRotationData();
-        }
-    }
-
     // Initialization methods
     private void InitializeComponents()
     {
+        // References
         mainCamera = Camera.main.transform;
         xrRig = mainCamera.parent;
         xrControllerLeft = xrRig.Find("LeftHand Controller");
@@ -92,11 +89,19 @@ public class SampleBySection : MonoBehaviour
         mainCamera.GetComponent<TrackedPoseDriver>().enabled = false;
         xrOrigin.GetComponent<XROrigin>().enabled = false;
 
+        // Disable controls
         xrControllerLeft.gameObject.SetActive(false);
         xrControllerRight.gameObject.SetActive(false);
 
-        mainThreadTimeRecorder = ProfilerRecorder.StartNew(ProfilerCategory.Internal, "Main Thread");
-        renderRecorderAllThreads = ProfilerRecorder.StartNew(ProfilerCategory.Internal, "CPU Render Thread Frame Time");
+        // Recorders
+        mainThreadTimeRecorder = Recorder.Get("Main Thread");
+        mainThreadTimeRecorder.enabled = true;
+        triangleRecorder = Recorder.Get("Triangles Count");
+        triangleRecorder.enabled = true;
+        drawCallsRecorder = Recorder.Get("Draw Calls Count");
+        drawCallsRecorder.enabled = true;
+        verticesRecorder = Recorder.Get("Vertices Count");
+        verticesRecorder.enabled = true;
     }
 
     private void InitializeSections()
@@ -122,44 +127,51 @@ public class SampleBySection : MonoBehaviour
     // Logging methods
     private void LogRotationData()
     {
-        double cpuTime = 0.0;
-        double gpuTime = 0.0;
+        double framerate = 0.0;
+        double cpu = 0.0;
+        double vertices = 0.0;
+        double tris = 0.0;
+        double drawCalls = 0.0;
 
-        if (mainThreadTimeRecorder.Valid)
+        if (!drawCallsRecorder.isValid)
         {
-            cpuTime = mainThreadTimeRecorder.LastValue * 1e-6; // Convert nanoseconds to milliseconds
+            Debug.Log("NOT VALID");
+            return;
         }
-        else
-        {
-            Debug.LogWarning("CPU Recorder is not valid");
-        }
+        // frame rate
+        framerate = 1.0f / Time.deltaTime; // s
 
-        if (renderRecorderAllThreads.Valid)
-        {
-            gpuTime = renderRecorderAllThreads.LastValue * 1e-6; // Convert nanoseconds to milliseconds
-        }
-        else
-        {
-            Debug.LogWarning("GPU Recorder is not valid");
-        }
+        // main thread recorder
+        cpu = mainThreadTimeRecorder.elapsedNanoseconds * 1e-6; // ms
 
-        Debug.Log($"CPU Time: {cpuTime} ms, GPU Time: {gpuTime} ms");
+        // vertices amount
+        vertices = verticesRecorder.elapsedNanoseconds / 1000; // k
+
+        // triangles amount
+        tris = triangleRecorder.elapsedNanoseconds / 1000; // k
+
+        // draw calls
+        drawCalls = drawCallsRecorder.elapsedNanoseconds;
+
+        // Debug.Log($"{framerate} ; {cpu} ; {vertices} ; {tris} ; {drawCalls}");
 
         string log = FormatLogRecord(
             xrRig.position.x,
             xrRig.position.y,
             xrRig.rotation.eulerAngles.y,
-            cpuTime,
-            gpuTime,
-            1.0f / Time.deltaTime
+            cpu,
+            vertices,
+            tris,
+            drawCalls,
+            framerate
         );
 
         csvWriter.WriteLine(log);
     }
 
-    private string FormatLogRecord(float x, float y, float rotation, double cpuTime, double gpuTime, float fps)
+    private string FormatLogRecord(float x, float y, float rotation, double cpu, double vertices, double tris, double drawCalls, double fps)
     {
-        return $"{x.ToString("F6").Replace(',', '.')},{y.ToString("F6").Replace(',', '.')},{rotation.ToString("F6").Replace(',', '.')},{cpuTime.ToString("F6").Replace(',', '.')},{gpuTime.ToString("F6").Replace(',', '.')},{fps.ToString("F6").Replace(',', '.')}";
+        return $"{x.ToString("F6").Replace(',', '.')},{y.ToString("F6").Replace(',', '.')},{rotation.ToString("F6").Replace(',', '.')},{cpu.ToString("F6").Replace(',', '.')},{vertices.ToString("F6").Replace(',', '.')},{tris.ToString("F6").Replace(',', '.')},{drawCalls.ToString("F6").Replace(',', '.')},{fps.ToString("F6").Replace(',', '.')}";
     }
 
     // Rotation and movement methods
@@ -229,8 +241,6 @@ public class SampleBySection : MonoBehaviour
 
     public void EndExperiment()
     {
-        mainThreadTimeRecorder.Dispose();
-        renderRecorderAllThreads.Dispose();
         mainCamera.GetComponent<TrackedPoseDriver>().enabled = true;
         xrOrigin.GetComponent<XROrigin>().enabled = true;
         xrControllerLeft.gameObject.SetActive(true);
@@ -243,6 +253,6 @@ public class SampleBySection : MonoBehaviour
     {
         csvWriter?.Close();
         csvWriter = new StreamWriter(Path.Combine(folderPath, $"rotation_{experimentName}_{currentSection}.csv"));
-        csvWriter.WriteLine("X,Y,Rotation,Main Thread,Render Thread,FPS");
+        csvWriter.WriteLine("X,Y,Rotation,Main Thread,Vertices,Triangles,Draw Calls,FPS");
     }
 }
