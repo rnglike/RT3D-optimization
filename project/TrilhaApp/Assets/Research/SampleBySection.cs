@@ -6,12 +6,13 @@ using Unity.XR.CoreUtils;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.Profiling;
 using System.Text;
+using UnityEngine.SceneManagement;
 
 public class SampleBySection : MonoBehaviour
 {
     // Public variables
     public GameObject xrOrigin;
-    public float rotationSpeed = 1.0f;
+    public float fraction = 4.0f;
     public float coldBootTime = 1.0f;
     public float waitTime = 1.0f;
     public Transform[] sections;
@@ -33,6 +34,11 @@ public class SampleBySection : MonoBehaviour
     private Recorder triangleRecorder;
     private Recorder drawCallsRecorder;
     private Recorder verticesRecorder;
+
+    public bool turning;
+    public bool hold;
+    public int rotated;
+    private float angles;
 
 // Method to calculate the average value from a ProfilerRecorder
 private static double GetRecorderAverage(ProfilerRecorder recorder)
@@ -70,7 +76,7 @@ private static double GetRecorderAverage(ProfilerRecorder recorder)
             RotateXrRig();
             LogRotationData();
         }
-        else if (isMoving)
+        if (isMoving)
         {
             MoveToNextSection();
         }
@@ -112,6 +118,7 @@ private static double GetRecorderAverage(ProfilerRecorder recorder)
         {
             sections[i] = transform.GetChild(i);
         }
+        angles = 360.0f / fraction;
     }
 
     private void CreateResearchFolder()
@@ -178,12 +185,27 @@ private static double GetRecorderAverage(ProfilerRecorder recorder)
     private void RotateXrRig()
     {
         // Rotate the XR rig
-        float angle = rotationSpeed * Time.deltaTime; // degrees per second
-        xrRig.Rotate(0.0f, angle, 0.0f, Space.Self);
+        xrRig.Rotate(0.0f, angles, 0.0f, Space.Self);
 
         // Check if the rotation is complete
-        if (xrRig.rotation.eulerAngles.y >= 359.0f)
+        if (Mathf.Abs(xrRig.rotation.eulerAngles.y - 0.0f) <= angles)
         {
+            turning = true;
+        }
+        else
+        {
+            turning = false;
+        }
+
+        if (turning != hold)
+        {
+            hold = turning;
+            rotated += 1;
+        }
+
+        if (rotated == 2)
+        {
+            rotated = 0;
             xrRig.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
             isRotating = false;
             isMoving = true;
@@ -192,6 +214,14 @@ private static double GetRecorderAverage(ProfilerRecorder recorder)
 
     private void MoveToNextSection()
     {
+        if (currentSection > sections.Length-1)
+        {
+            EndExperiment();
+            isMoving = false;
+            isRotating = false;
+            currentSection = 0;
+            return;
+        }
         // Move the XR rig to the next section
         xrRig.position = Vector3.MoveTowards(xrRig.position, sections[currentSection].position, 0.1f);
 
@@ -207,30 +237,23 @@ private static double GetRecorderAverage(ProfilerRecorder recorder)
     private IEnumerator WaitForBegin()
     {
         yield return new WaitForSeconds(coldBootTime);
-        StartRotation();
+        StartExperiment();
     }
 
     private IEnumerator WaitForNextSection()
     {
         yield return new WaitForSeconds(waitTime);
         currentSection++;
-        if (currentSection >= sections.Length)
-        {
-            EndExperiment();
-            currentSection = 0;
-            yield break;
-        }
-
+    
         OpenNewCsvWriter();
         isRotating = true;
         isMoving = false;
     }
 
     // Experiment control methods
-    public void StartRotation()
+    public void StartExperiment()
     {
-        OpenNewCsvWriter();
-        isRotating = true;
+        isMoving = true;
     }
 
     public void StopRotation()
@@ -246,7 +269,7 @@ private static double GetRecorderAverage(ProfilerRecorder recorder)
         xrControllerLeft.gameObject.SetActive(true);
         xrControllerRight.gameObject.SetActive(true);
         csvWriter.Close();
-        Destroy(this);
+        LoadNextScene();
     }
 
     private void OpenNewCsvWriter()
@@ -254,5 +277,16 @@ private static double GetRecorderAverage(ProfilerRecorder recorder)
         csvWriter?.Close();
         csvWriter = new StreamWriter(Path.Combine(folderPath, $"rotation_{experimentName}_{currentSection}.csv"));
         csvWriter.WriteLine("X,Y,Rotation,Main Thread,Vertices,Triangles,Draw Calls,FPS");
+    }
+
+    private void LoadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int totalScenesInBuild = SceneManager.sceneCountInBuildSettings;
+        int nextSceneIndex = currentSceneIndex+1;
+        if (nextSceneIndex < totalScenesInBuild)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
     }
 }
